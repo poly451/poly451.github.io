@@ -7,9 +7,9 @@ date: 2019-04-26
 Today, I'm going to talk about iteration.
 SO MANY TIMES I've had to examine every element of a list. Usually I do something like this:
 
->for a_car in a_list_of_cars:
->>if a_car == Mustang:
->>>Ford = True
+<code>for a_car in a_list_of_cars:
+if a_car == Mustang:
+Ford = True</code>
         
 Or something marginally more useful ...
 
