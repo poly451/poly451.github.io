@@ -151,7 +151,7 @@ __delitem__
 
 That's it!
 
-I know my code isn't the most elegant, so if anyone would like to suggest a revision--or an addition!--please leave a comment or email: c (dot) strange (dot) 451 (at) gmail.com.
+I know my code isn't the most elegant (you can find it [here](https://github.com/poly451/Tutorials/blob/master/Class-Iteration/the_code.py)), so if anyone would like to suggest a revision--or an addition!--please leave a comment or email: c (dot) strange (dot) 451 (at) gmail.com. 
 
 ## References:
 * Thanks to [alecxe](https://stackoverflow.com/users/771848/alecxe) and [Martin Pieters](https://stackoverflow.com/users/100297/martijn-pieters) for their comments on the post: ["Object is not iterable" error on my python implementation of iterable](https://stackoverflow.com/questions/18506144/object-is-not-iterable-error-on-my-python-implementation-of-iterable).
