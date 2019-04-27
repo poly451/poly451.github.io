@@ -9,7 +9,7 @@ SO MANY TIMES I've had to examine every element of a list. Usually I do somethin
 
 for a_car in a_list_of_cars:
     if a_car == Mustang:
-        Ford = True</code>
+        Ford = True
         
 Or something marginally more useful ...
 
