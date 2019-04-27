@@ -50,7 +50,7 @@ But if you run this, you'll get the error.
 As we've seen, Python will throw up an error if you try to iterate over one of your classes (Swords) from somewhere outside that class.
 
 ## The Solution:
-Write your own `__iter__` and `__next__` functions.[1] It's easy! Here's the code:
+Write your own `__iter__` and `__next__` functions. It's easy! Here's the code:
 
 
 ```python
@@ -111,7 +111,7 @@ When you run this you get the error:
 > TypeError: 'Swords' object does not support indexing
 
 ## The Solution
-Write code for the functions:[2]
+Write code for the functions:
 
 ```python
 __getitem__
@@ -153,18 +153,7 @@ That's it!
 
 I know my code isn't the most elegant, so if anyone would like to suggest a revision--or an addition!--please leave a comment or email: c (dot) strange (dot) 451 (at) gmail.com.
 
-References:
+## References:
+* Thanks to [alecxe](https://stackoverflow.com/users/771848/alecxe) and [Martin Pieters](https://stackoverflow.com/users/100297/martijn-pieters) for their comments on the post: ["Object is not iterable" error on my python implementation of iterable](https://stackoverflow.com/questions/18506144/object-is-not-iterable-error-on-my-python-implementation-of-iterable).
 
-
-1. Thanks to [alecxe] (https://stackoverflow.com/users/771848/alecxe) and [Martin Pieters] (https://stackoverflow.com/users/100297/martijn-pieters) for their comments on the post: [Object is not iterable" error on my python implementation of iterable](https://stackoverflow.com/questions/18506144/object-is-not-iterable-error-on-my-python-implementation-of-iterable).
-
-2. Thanks to Omkar Pathak and his article, [Using Python __getitem__ and __setitem__] (https://www.omkarpathak.in/2018/04/11/python-getitem-and-setitem/).
-
-
-
-
-
-
-
-
-Well. Finally got around to putting this old website together. Neat thing about it - powered by [Jekyll](http://jekyllrb.com) and I can use Markdown to author my posts. It actually is a lot easier than I thought it was going to be.
+* Thanks to Omkar Pathak and his article, [Using Python __getitem__ and __setitem__](https://www.omkarpathak.in/2018/04/11/python-getitem-and-setitem/).
