@@ -15,10 +15,12 @@ for a_car in a_list_of_cars:
 
 Or something marginally more useful ...
 
+```python
 For a_character in all_characters:
     if a_character.name == "Guenda"
         a_character.charisma += 5
-        
+```
+
 ... but you get the idea.
 
 OKAY. But let's say you're writing an RPG and you have a class, Swords, and within that class one of your instance variables is implemented as a list.
