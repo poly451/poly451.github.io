@@ -5,7 +5,7 @@ date: 2019-04-26
 ---
 # Iteration and Custom Classes
 Today, I'm going to talk about iteration.
-SO MANY TIMES I've had to examine every element of a list. Usually I do something like this:
+SO MANY TIMES I've had to examine every element of a list. Usually I do something like:
 
 ```python
 for a_car in a_list_of_cars:
@@ -34,7 +34,7 @@ my_sword.name = "Rusty Wonder"
             my_sword = a_sword
 ```
 
-But let's say that your class, Swords, is used in another class: Weapons, and let's say your character wants to select a weapon. You might write:
+So far, go good. But let's not stop there. Let's say your class, Swords, is used in another class: Weapons, and let's say your character wants to select a weapon. You might write:
 
 ```python
 for a_weapon in all_weapons:
@@ -47,10 +47,9 @@ But if you run this, you'll get the error.
 >TypeError: 'Swords' object is not iterable
 
 ## The Problem:
-As we've seen, Python will throw up an error if you try to iterate over one of your classes (Swords) from another class (Weapons).
+As we've seen, Python will throw up an error if you try to iterate over one of your classes (Swords) from somewhere outside that class.
 
-
-The Solution:
+## The Solution:
 Write your own `__iter__` and `__next__` functions.[1] It's easy! Here's the code:
 
 
@@ -63,119 +62,103 @@ class Someclass
     def __iter__(self):
         return self
 
-    def ____next____(self):
+    def __next__(self):
         if self.i < len(self.a_lost):
             self.i = self.i + 1
             return self.a_list[self.i-1]
         else:
             raise StopIteration
 ```
+Also, add `self.i = 0` to `__init__`.
 
-Now run the program again. No errors!
+Now run the program. It *should* be error free.
 
-Another Problem: Len() [List error that happens, use that as the header.]
+## Another Problem: `len()` doesn't work
 
-
-But we're not finished! There's more we could do. Let's look at len(). Let's say that we want to know how many swords we have as weapons. So we want to do something like this:
-
+We're not finished! Let's look at `len()`. Let's say that we want to know how many swords we have as weapons so we write something like this (by the way, if you want to look at the tutorial program I've written for this article, here's a [link to my github repo](https://github.com/poly451/Tutorials)):
 
 
+```python
 class Weapons
-
 ....
-
 def number_of_weapons(self):
-
     return len(self.swords) + len(self.daggers) + len(self.flamethrowers)
-
-
+```
 
 You'll get the error:
 
+> TypeError: object of type 'Swords' has no len()
 
+Well, good news! The fix is easy. In class Swords just include:
 
-[list error]
-
-
-
-Good news! The fix is easy. In class Swords just include:
-
-
-
+```python
 def __len__(self):
-
     return len(self.a_list)
+```
 
-It works!! But, wait! We're not done yet.
+It works!! But we're not done yet.
 
-Indexing: It's a good thing
+## Indexing: It's a good thing
 Let's say you're debugging and you want a function in class Swords to return a sword, any sword, so you write:
 
-
-
+```python
 def return_first_sword(self):
-
     return self.swords[0]
-
-
+```
 
 When you run this you get the error:
 
+> TypeError: 'Swords' object does not support indexing
 
-
-[list error]
-
-
-
-The Solution
+## The Solution
 Write code for the functions:[2]
 
-
-
+```python
 __getitem__
 
 __setitem__
 
 __delitem__
+```
 
-
-
-def __getitem__(self)
-
-
-
-def __delitem__(self, i):
-
-    new_list = []
-
-    for counter, item in enumerate(self.a_list):
-
-        if counter==i:
-
-            pass
-
+```python
+    def __getitem__(self, item):
+        if item >= 0 and item < len(self.all_swords):
+            return self.all_swords[item]
         else:
+            raise ValueError
 
-            new_list.append(item)
+    def __setitem__(self, key, value):
+        if key >= 0 and key < len(self.all_swords):
+            self.all_swords[key] = value
+        else:
+            raise ValueError
 
-    self.a_list = new_list
-
-
+    def __delitem__(self, key):
+        new_list = []
+        counter = 0
+        if key >= 0 and key < len(self.all_swords):
+            for each_sword in self.all_swords:
+                if counter == key:
+                    pass
+                else:
+                    new_list.append(each_sword)
+                counter += 1
+            self.all_swords = new_list
+        else:
+            raise ValueError    
+```
 
 That's it!
 
-
-
-I know my code isn't the most elegant, so if anyone would like to suggest a revision--or an addition!--please leave a comment or email me at: c (dot) strange (dot) 451 (at) gmail.com.
+I know my code isn't the most elegant, so if anyone would like to suggest a revision--or an addition!--please leave a comment or email: c (dot) strange (dot) 451 (at) gmail.com.
 
 References:
 
 
-1. Thanks to alecxe [https://stackoverflow.com/users/771848/alecxe] and Martin Pieters [https://stackoverflow.com/users/100297/martijn-pieters] for their comments on the post: "Object is not iterable" error on my python implementation of iterable" over at stackoverflow.com. [https://stackoverflow.com/questions/18506144/object-is-not-iterable-error-on-my-python-implementation-of-iterable]
+1. Thanks to [alecxe] (https://stackoverflow.com/users/771848/alecxe) and [Martin Pieters] (https://stackoverflow.com/users/100297/martijn-pieters) for their comments on the post: [Object is not iterable" error on my python implementation of iterable](https://stackoverflow.com/questions/18506144/object-is-not-iterable-error-on-my-python-implementation-of-iterable).
 
-
-
-2. Thanks to Omkar Pathak and his article, "Using Python __getitem__ and __setitem__" [https://www.omkarpathak.in/2018/04/11/python-getitem-and-setitem/].
+2. Thanks to Omkar Pathak and his article, [Using Python __getitem__ and __setitem__] (https://www.omkarpathak.in/2018/04/11/python-getitem-and-setitem/).
 
 
 
