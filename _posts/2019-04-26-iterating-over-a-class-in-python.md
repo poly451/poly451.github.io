@@ -3,7 +3,7 @@ layout: post
 title: "Iterating Over a Class in Python"
 date: 2019-04-26
 ---
-# Iteration and Custom Classes
+## Iteration and Custom Classes
 Today, I'm going to talk about iteration.
 SO MANY TIMES I've had to examine every element of a list. Usually I do something like:
 
