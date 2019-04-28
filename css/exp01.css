@@ -4,7 +4,7 @@ body {
 }
 a {
     text-decoration: none;
-    color: #999;
+    color: #999; /* darker grey */
 }
 a:hover {
     text-decoration: underline;
@@ -16,17 +16,17 @@ h1 {
 p {
     font-size: 1.5em;
     line-height: 1.4em;
-    color: #333;
+    color: #333; /* grey */
 }
 footer {
-    border-top: 1px solid #d5d5d5;
+    border-top: 1px solid #d5d5d5; /* grey */
     font-size: .8em;
 }
 pre.highlight {
     font-size:18px;
-    background: #fffbdd;
+    background: #fffbdd; /* light yellow */
 }
 div.highlight {
     font-size:18px;
-    background: #7e0b0b;
+    background: #7e0b0b; /* dark red */
 }
