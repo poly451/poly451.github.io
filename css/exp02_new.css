@@ -48,6 +48,6 @@ pre.highlight {
 }
 div.highlight {
     font-size:14px;
-    background: #cc0000; /* dark red */
-    padding: 10px;
+    background: #cccccc; /* light grey */
+    padding: 2px;
 }
