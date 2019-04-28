@@ -42,12 +42,12 @@ pre {
 }
 
 pre.highlight {
-    font-size:14px;
+    font-size:16px;
     /* background: #fffbdd;  light yellow */
     background: #cccccc;
 }
 div.highlight {
-    font-size:14px;
+ /*   font-size:14px; */
  /*   background: #cccccc; */ /* light grey */
     background: #66cc66; /* green */
     padding: 2px 10px 10px 10px;
