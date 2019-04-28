@@ -49,5 +49,5 @@ pre.highlight {
 div.highlight {
     font-size:14px;
     background: #cccccc; /* light grey */
-    padding: 2px;
+    padding: 6px 2px 2px 2px;
 }
