@@ -1,7 +1,7 @@
 ---
 layout: exp01
 title: "Experimenting with css sheets"
-date: 2019-04-26
+date: 2019-04-28
 ---
 ## Iteration and Custom Classes
 Today, I'm going to talk about iteration.
