@@ -22,3 +22,7 @@ footer {
     border-top: 1px solid #d5d5d5;
     font-size: .8em;
 }
+pre.highlight {
+    font-size:18px;
+    background: #fffbdd;
+}
